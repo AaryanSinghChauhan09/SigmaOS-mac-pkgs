@@ -1,4 +1,6 @@
-# Omarchy Mac packages
+# SigmaOS Mac Packages
+
+> Forked from [omacom/omarchy-mac-pkgs](https://github.com/omacom/omarchy-mac-pkgs) (MIT). See `SIGMAOS_FORK.md`.
 
 **Want Omarchy on your Mac?** Use the [Omarchy Installer](https://github.com/omacom/omarchy-mac-installer), or `brew install omacom/mac/omarchy`. This repository holds the packages it installs. It is not an installer, and it is not a copy of Omarchy.
 
