@@ -62,3 +62,8 @@ Omarchy Mac was started by [Naeem Malik](https://github.com/malik-na) in Septemb
 ## License
 
 MIT, as Omarchy. See [LICENSE](LICENSE).
+## Documentation
+
+Wiki documentation is available in the SigmaOS Wiki Staging repository:
+
+- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging#SigmaOS-mac-pkgs) - Full Wiki documentation for all SigmaOS components
