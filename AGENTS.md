@@ -1,11 +1,11 @@
-# Omarchy Mac packages
+# SigmaOS Mac packages
 
-This repository holds the Apple Silicon add-on packages for Omarchy, the tooling that releases and qualifies them, and the Mac manual. It does not hold the desktop. [README.md](README.md) describes the layout and [CONTRIBUTING.md](CONTRIBUTING.md) says where every other kind of change belongs; send such changes there instead of adding them here.
+This repository holds the Apple Silicon add-on packages for SigmaOS, the tooling that releases and qualifies them, and the Mac manual. It does not hold the desktop. [README.md](README.md) describes the layout and [CONTRIBUTING.md](CONTRIBUTING.md) says where every other kind of change belongs; send such changes there instead of adding them here.
 
 ## Layout
 
-- `omarchy-mac/`, `omarchy-mac-boot/`: one directory per package, each meeting the package contract in the README.
-- `test/integration/`: tests that stage more than one package, or a package against the Omarchy runtime.
+- `sigmaos-mac/`, `sigmaos-mac-boot/`: one directory per package, each meeting the package contract in the README.
+- `test/integration/`: tests that stage more than one package, or a package against the SigmaOS runtime.
 - `tools/`: release, acceptance, hardware and package-resolution tooling.
 - `mac-manual/`: the user manual.
 
@@ -13,16 +13,16 @@ CI rejects files outside these, the root documents and `.github/`.
 
 ## Rules
 
-- A package never reads another package's tree, and never reads the runtime's source. Tests that need the runtime take a checkout from `OMARCHY_TEST_RUNTIME` and skip without one; a check that stages two packages belongs in `test/integration/`.
-- Run the suite of every package you change, and `test/integration/all` with `OMARCHY_TEST_RUNTIME` set when a change touches what the runtime reads.
-- `omarchy-mac-boot` covers what stays installed and runs again at updates. What runs once to install a Mac belongs in omacom/omarchy-mac-installer.
+- A package never reads another package's tree, and never reads the runtime's source. Tests that need the runtime take a checkout from `SIGMAOS_TEST_RUNTIME` and skip without one; a check that stages two packages belongs in `test/integration/`.
+- Run the suite of every package you change, and `test/integration/all` with `SIGMAOS_TEST_RUNTIME` set when a change touches what the runtime reads.
+- `sigmaos-mac-boot` covers what stays installed and runs again at updates. What runs once to install a Mac belongs in AaryanSinghChauhan09/sigmaos-mac-installer.
 - Change the manual in the same commit as the behaviour it describes.
 - A udev `add` action that must reach a device already present also gets a pacman hook that does that work on install and upgrade, since on the upgrade that installs the rule no `add` comes. The hook exits 0 in a chroot or an unbooted root, and never fails the transaction. An `add` that should only run when the device appears, such as one tied to the boot splash, does not.
-- An invitation is a prompt the runtime shows the owner once, such as the post-update offer to set up a newly found fingerprint reader. A change that makes one appear, such as a new `fingerprint-readers` entry, ships only after everything the invitation leads to is published to the repositories Macs update from. #12 adds `fingerprint-readers` to omarchy-mac's platform files, and omacom/omarchy#14675 teaches the runtime's detector, `omarchy-hw-fingerprint`, to read it.
+- An invitation is a prompt the runtime shows the owner once, such as the post-update offer to set up a newly found fingerprint reader. A change that makes one appear, such as a new `fingerprint-readers` entry, ships only after everything the invitation leads to is published to the repositories Macs update from. The corresponding SigmaOS issue adds `fingerprint-readers` to sigmaos-mac's platform files, and the SigmaOS runtime PR teaches the runtime's detector, `sigmaos-hw-fingerprint`, to read it.
 
 ## Tests
 
-- A test passes or fails the same on every machine. It never reads the host's `/usr/share/omarchy-platform`, installed `omarchy-*` commands, `/sys` or running services: stage into a temporary root, point copies at fixtures, and stub external dependencies, keeping the real commands under test. Where the container can verify units, run `systemd-analyze verify` with `--root` at the staged tree. A pass on a Mac with Omarchy installed says nothing about CI.
+- A test passes or fails the same on every machine. It never reads the host's `/usr/share/sigmaos-platform`, installed `sigmaos-*` commands, `/sys` or running services: stage into a temporary root, point copies at fixtures, and stub external dependencies, keeping the real commands under test. Where the container can verify units, run `systemd-analyze verify` with `--root` at the staged tree. A pass on a Mac with SigmaOS installed says nothing about CI.
 - When a change adds a detection path or a fallback, test the inverse too: the new path never hides what the old one found.
 - A test that needs something the runtime gained at a later commit moves `test/integration/runtime` to a commit that has it; it does not skip because the current pin lacks it.
 - Before calling a change tested, check that CI ran it: a skipped test, or a job that failed before reaching the tests, is not a pass.
