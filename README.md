@@ -10,14 +10,14 @@ This is the home of the Apple Silicon add-on packages for [SigmaOS](https://gith
 
 | Package | What it does | Version |
 | --- | --- | --- |
-| [`omarchy-mac`](omarchy-mac/) | Apple Silicon defaults and support services: the Wi-Fi backend and resume recovery, microphone mapping, speaker safety, the notch, the keyboard, battery charge limits and hardware video decode | Semver, in `omarchy-mac/version` |
-| [`omarchy-mac-boot`](omarchy-mac-boot/) | Boot support: the initramfs and vendor firmware, in-place encryption, first boot, Limine and U-Boot, update verification and factory reset | The UTC date of the commit its recipe pins |
+| [`sigmaos-mac`](sigmaos-mac/) | Apple Silicon defaults and support services: the Wi-Fi backend and resume recovery, microphone mapping, speaker safety, the notch, the keyboard, battery charge limits and hardware video decode | Semver, in `sigmaos-mac/version` |
+| [`sigmaos-mac-boot`](sigmaos-mac-boot/) | Boot support: the initramfs and vendor firmware, in-place encryption, first boot, Limine and U-Boot, update verification and factory reset | The UTC date of the commit its recipe pins |
 
-Both are built by recipes in [AaryanSinghChauhan09/SigmaOS-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs) and published to pkgs.omarchy.org for aarch64, on `edge` first. Each recipe pins an exact commit of this repository.
+Both are built by recipes in [AaryanSinghChauhan09/SigmaOS-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs) and published to pkgs.sigmaos.org for aarch64, on `edge` first. Each recipe pins an exact commit of this repository.
 
 ## What else is here
 
-- [`mac-manual/`](mac-manual/): the user manual for SigmaOS on a Mac, covering only what differs from [SigmaOS's manual](https://omarchy.org/manual/).
+- [`mac-manual/`](mac-manual/): the user manual for SigmaOS on a Mac, covering only what differs from [SigmaOS's manual](https://sigmaos.org/manual/).
 - [`tools/`](tools/): release orchestration, VM and hardware acceptance, evidence checks and package resolution.
 - [`test/integration/`](test/integration/): tests of the packages together, and against the SigmaOS runtime they install into.
 
@@ -35,8 +35,8 @@ A package never reads another package's tree or the runtime's source. Tests that
 ## Running the tests
 
 ```bash
-omarchy-mac/test/all
-omarchy-mac-boot/test/all
+sigmaos-mac/test/all
+sigmaos-mac-boot/test/all
 OMARCHY_TEST_RUNTIME=~/code/omarchy test/integration/all
 ```
 
@@ -53,7 +53,7 @@ These packages used to live in [AaryanSinghChauhan09/SigmaOS-mac](https://github
 - **`quattro`** is what Macs on the SigmaOS 4 fork update from. It stays only to deliver the standalone migration script that moves those Macs onto official SigmaOS and these packages, and is retired after the migration window.
 - **`quattro-upstream`** is frozen. It held the Apple Silicon desktop work submitted to SigmaOS as [AaryanSinghChauhan09/SigmaOS#13362](https://github.com/AaryanSinghChauhan09/SigmaOS/pull/13362); package work continues here, desktop work in AaryanSinghChauhan09/SigmaOS.
 
-The SigmaOS 3.8 tree that used to be omarchy-mac's `main` is kept there, read-only, as `archive/omarchy-3.8`.
+The SigmaOS 3.8 tree that used to be sigmaos-mac's `main` is kept there, read-only, as `archive/sigmaos-3.8`.
 
 ## Credits
 
