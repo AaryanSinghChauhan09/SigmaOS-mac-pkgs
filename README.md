@@ -1,10 +1,10 @@
 # SigmaOS Mac Packages
 
-> Forked from [omacom/omarchy-mac-pkgs](https://github.com/omacom/omarchy-mac-pkgs) (MIT). See `SIGMAOS_FORK.md`.
+> Forked from [AaryanSinghChauhan09/SigmaOS-mac-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs) (MIT). See `SIGMAOS_FORK.md`.
 
-**Want Omarchy on your Mac?** Use the [Omarchy Installer](https://github.com/omacom/omarchy-mac-installer), or `brew install omacom/mac/omarchy`. This repository holds the packages it installs. It is not an installer, and it is not a copy of Omarchy.
+**Want SigmaOS on your Mac?** Use the [SigmaOS Installer](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer), or `brew install SigmaOS/mac/omarchy`. This repository holds the packages it installs. It is not an installer, and it is not a copy of SigmaOS.
 
-This is the home of the Apple Silicon add-on packages for [Omarchy](https://github.com/omacom/omarchy), the tooling that releases and qualifies them, and the Mac manual. The desktop on a Mac is Omarchy's own; these packages add what the hardware needs on top of it.
+This is the home of the Apple Silicon add-on packages for [SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS), the tooling that releases and qualifies them, and the Mac manual. The desktop on a Mac is SigmaOS's own; these packages add what the hardware needs on top of it.
 
 ## Packages
 
@@ -13,13 +13,13 @@ This is the home of the Apple Silicon add-on packages for [Omarchy](https://gith
 | [`omarchy-mac`](omarchy-mac/) | Apple Silicon defaults and support services: the Wi-Fi backend and resume recovery, microphone mapping, speaker safety, the notch, the keyboard, battery charge limits and hardware video decode | Semver, in `omarchy-mac/version` |
 | [`omarchy-mac-boot`](omarchy-mac-boot/) | Boot support: the initramfs and vendor firmware, in-place encryption, first boot, Limine and U-Boot, update verification and factory reset | The UTC date of the commit its recipe pins |
 
-Both are built by recipes in [omacom/omarchy-pkgs](https://github.com/omacom/omarchy-pkgs) and published to pkgs.omarchy.org for aarch64, on `edge` first. Each recipe pins an exact commit of this repository.
+Both are built by recipes in [AaryanSinghChauhan09/SigmaOS-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-pkgs) and published to pkgs.omarchy.org for aarch64, on `edge` first. Each recipe pins an exact commit of this repository.
 
 ## What else is here
 
-- [`mac-manual/`](mac-manual/): the user manual for Omarchy on a Mac, covering only what differs from [Omarchy's manual](https://omarchy.org/manual/).
+- [`mac-manual/`](mac-manual/): the user manual for SigmaOS on a Mac, covering only what differs from [SigmaOS's manual](https://omarchy.org/manual/).
 - [`tools/`](tools/): release orchestration, VM and hardware acceptance, evidence checks and package resolution.
-- [`test/integration/`](test/integration/): tests of the packages together, and against the Omarchy runtime they install into.
+- [`test/integration/`](test/integration/): tests of the packages together, and against the SigmaOS runtime they install into.
 
 ## The package contract
 
@@ -44,24 +44,24 @@ CI runs all of them, with the runtime pinned to a reviewed commit.
 
 ## Contributing
 
-Package changes come here, to [omacom/omarchy-mac-pkgs](https://github.com/omacom/omarchy-mac-pkgs), as pull requests against `main`. The rule of thumb: if a change only means something on an Apple Silicon Mac, it belongs in a package here; if Omarchy needs a new place for a platform to plug in, or the fix helps other machines too, it belongs upstream in [omacom/omarchy](https://github.com/omacom/omarchy). Installer and packaging changes have homes of their own. [CONTRIBUTING.md](CONTRIBUTING.md) explains each, with examples.
+Package changes come here, to [AaryanSinghChauhan09/SigmaOS-mac-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs), as pull requests against `main`. The rule of thumb: if a change only means something on an Apple Silicon Mac, it belongs in a package here; if SigmaOS needs a new place for a platform to plug in, or the fix helps other machines too, it belongs upstream in [AaryanSinghChauhan09/SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS). Installer and packaging changes have homes of their own. [CONTRIBUTING.md](CONTRIBUTING.md) explains each, with examples.
 
 ## Transitional branches
 
-These packages used to live in [omacom/omarchy-mac](https://github.com/omacom/omarchy-mac), which carried the whole Mac desktop. Two of its branches remain while existing Macs move over; neither takes package changes.
+These packages used to live in [AaryanSinghChauhan09/SigmaOS-mac](https://github.com/AaryanSinghChauhan09/SigmaOS-mac), which carried the whole Mac desktop. Two of its branches remain while existing Macs move over; neither takes package changes.
 
-- **`quattro`** is what Macs on the Omarchy 4 fork update from. It stays only to deliver the standalone migration script that moves those Macs onto official Omarchy and these packages, and is retired after the migration window.
-- **`quattro-upstream`** is frozen. It held the Apple Silicon desktop work submitted to Omarchy as [omacom/omarchy#13362](https://github.com/omacom/omarchy/pull/13362); package work continues here, desktop work in omacom/omarchy.
+- **`quattro`** is what Macs on the SigmaOS 4 fork update from. It stays only to deliver the standalone migration script that moves those Macs onto official SigmaOS and these packages, and is retired after the migration window.
+- **`quattro-upstream`** is frozen. It held the Apple Silicon desktop work submitted to SigmaOS as [AaryanSinghChauhan09/SigmaOS#13362](https://github.com/AaryanSinghChauhan09/SigmaOS/pull/13362); package work continues here, desktop work in AaryanSinghChauhan09/SigmaOS.
 
-The Omarchy 3.8 tree that used to be omarchy-mac's `main` is kept there, read-only, as `archive/omarchy-3.8`.
+The SigmaOS 3.8 tree that used to be omarchy-mac's `main` is kept there, read-only, as `archive/omarchy-3.8`.
 
 ## Credits
 
-Omarchy Mac was started by [Naeem Malik](https://github.com/malik-na) in September 2025, when he first brought Omarchy to Apple Silicon Macs, and it grew from there into the community project these packages come from. Thanks to everyone who has contributed since, to Asahi Linux and Asahi Alarm for making Linux on Apple Silicon possible, and to DHH for creating Omarchy.
+SigmaOS Mac was started by [Naeem Malik](https://github.com/malik-na) in September 2025, when he first brought SigmaOS to Apple Silicon Macs, and it grew from there into the community project these packages come from. Thanks to everyone who has contributed since, to Asahi Linux and Asahi Alarm for making Linux on Apple Silicon possible, and to DHH for creating SigmaOS.
 
 ## License
 
-MIT, as Omarchy. See [LICENSE](LICENSE).
+MIT, as SigmaOS. See [LICENSE](LICENSE).
 ## Documentation
 
 Wiki documentation is available in the SigmaOS Wiki Staging repository:
