@@ -1,5 +1,5 @@
 [component]
-name = "sigmaos-omarchy-mac-pkgs"
+name = "sigmaos-mac-pkgs"
 version = "0.1.0"
-description = "SigmaOS Omarchy macOS package set"
+description = "SigmaOS macOS package set"
 license = "GPL-3.0-or-later"
