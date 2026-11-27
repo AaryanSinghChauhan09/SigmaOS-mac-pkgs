@@ -2,7 +2,7 @@
 
 > Forked from [AaryanSinghChauhan09/SigmaOS-mac-pkgs](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-pkgs) (MIT). See `SIGMAOS_FORK.md`.
 
-**Want SigmaOS on your Mac?** Use the [SigmaOS Installer](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer), or `brew install SigmaOS/mac/omarchy`. This repository holds the packages it installs. It is not an installer, and it is not a copy of SigmaOS.
+**Want SigmaOS on your Mac?** Use the [SigmaOS Installer](https://github.com/AaryanSinghChauhan09/SigmaOS-mac-installer), or `brew install SigmaOS/mac/sigmaos`. This repository holds the packages it installs. It is not an installer, and it is not a copy of SigmaOS.
 
 This is the home of the Apple Silicon add-on packages for [SigmaOS](https://github.com/AaryanSinghChauhan09/SigmaOS), the tooling that releases and qualifies them, and the Mac manual. The desktop on a Mac is SigmaOS's own; these packages add what the hardware needs on top of it.
 
@@ -30,14 +30,14 @@ Every top-level package directory has:
 - `README.md` and `LICENSE`.
 - A version: a `version` file, or one its recipe derives from the source.
 
-A package never reads another package's tree or the runtime's source. Tests that need the runtime take a checkout of it from `OMARCHY_TEST_RUNTIME` and skip without one.
+A package never reads another package's tree or the runtime's source. Tests that need the runtime take a checkout of it from `SIGMAOS_TEST_RUNTIME` and skip without one.
 
 ## Running the tests
 
 ```bash
 sigmaos-mac/test/all
 sigmaos-mac-boot/test/all
-OMARCHY_TEST_RUNTIME=~/code/omarchy test/integration/all
+SIGMAOS_TEST_RUNTIME=~/code/sigmaos test/integration/all
 ```
 
 CI runs all of them, with the runtime pinned to a reviewed commit.
